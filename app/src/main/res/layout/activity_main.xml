@@ -11,6 +11,7 @@
    <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent"
+
        android:orientation="vertical">
        <RelativeLayout
            android:layout_width="match_parent"
@@ -52,20 +53,108 @@
            android:layout_height="match_parent"></com.hjm.bottomtabbar.BottomTabBar>
    </LinearLayout>
     <LinearLayout
-        android:layout_width="240dp"
-        android:layout_height="match_parent"
+        android:layout_width="350dp"
+        android:layout_height="750dp"
         android:id="@+id/ll"
-
         android:layout_gravity="start"
-        android:background="@color/colorAccent"
+        android:background="#fff"
         android:orientation="vertical">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="250dp"
+          android:background="@mipmap/drawerlayout_background"
+          android:orientation="vertical"
+          >
+          <RelativeLayout
+              android:layout_marginTop="150dp"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+
+              >
+
+              <com.facebook.drawee.view.SimpleDraweeView
+                 android:id="@+id/a"
+                  android:layout_width="50dp"
+                  android:layout_height="50dp"
+                  android:gravity="center"
+                  android:layout_marginLeft="20dp"
+                  app:placeholderImage="@mipmap/touxiang"
+                  app:roundAsCircle="true" />
+
+              <TextView
+                android:id="@+id/b"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:layout_marginLeft="30dp"
+                  android:layout_marginTop="5dp"
+                  android:layout_toRightOf="@+id/a"
+                  android:text="椰汁奶茶"
+                  android:textColor="#fff"
+                  android:textSize="20dp" />
+
+              <ImageView
+
+                  android:layout_width="match_parent"
+                  android:layout_height="40dp"
+                  android:layout_marginTop="5dp"
+                  android:layout_marginLeft="70dp"
+                  android:layout_toRightOf="@+id/b"
+                  android:src="@mipmap/sex" />
+          </RelativeLayout>
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#fff"
+              android:layout_marginLeft="10dp"
+              android:padding="10dp"
+              android:text="编辑个性签名"/>
+      </LinearLayout>
         <ListView
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
             android:id="@+id/lv"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="200dp">
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/yl"
+                />
+             <TextView
+                 android:layout_marginLeft="20dp"
+                 android:gravity="center"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="夜间模式"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:text="切换"/>
+        </LinearLayout>
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@mipmap/raw_1499947056"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@mipmap/raw_1499947157"/>
+        </LinearLayout>
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>
