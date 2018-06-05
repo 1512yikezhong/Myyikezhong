@@ -4,14 +4,15 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.LinearLayout;
 
 import com.bawei.myyikezhong.Duanzi.DuanziFragment;
 import com.bawei.myyikezhong.Qutu.QutuFragment;
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //侧拉框的数据
     int imgarr[] = {R.mipmap.raw_1499933216, R.mipmap.raw_1499947358, R.mipmap.raw_1499946865, R.mipmap.raw_1499947389};
     final String tvarr[] = {"我的关注", "我的收藏", "搜索好友", "消息通知"};
+    private SimpleDraweeView mA;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mLl = (LinearLayout) findViewById(R.id.ll);
         mDl = (DrawerLayout) findViewById(R.id.activity_main);
+        mA = (SimpleDraweeView) findViewById(R.id.a);
+        mA.setOnClickListener(this);
     }
 
     /**
@@ -96,6 +101,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.imgbtn:
                 break;
             case R.id.sdv:
+                //点击头像调用侧拉框  左侧出现
+                mDl.openDrawer(Gravity.LEFT);
+                break;
+            case R.id.a:
+                //点击头像登录
+
                 break;
 
         }
