@@ -34,7 +34,6 @@ TuijianFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.layout_tuijian, container, false);
          tab = view.findViewById(R.id.tablayout);
          viewPager = view.findViewById(R.id.viewpage);
