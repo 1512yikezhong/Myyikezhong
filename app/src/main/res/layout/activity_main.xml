@@ -1,16 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/activity_main"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.bawei.myyikezhong.MainActivity">
 
-    <com.hjm.bottomtabbar.BottomTabBar
-        android:id="@+id/btb"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.hjm.bottomtabbar.BottomTabBar>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:background="#44b0d1">
 
+           <com.facebook.drawee.view.SimpleDraweeView
+               android:id="@+id/sdv"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:gravity="center"
+               app:placeholderImage="@mipmap/touxiang"
+               app:roundAsCircle="true" />
 
-</LinearLayout>
+           <TextView
+               android:id="@+id/tv"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:layout_marginLeft="150dp"
+               android:layout_marginTop="5dp"
+               android:layout_toRightOf="@+id/sdv"
+               android:text="视频"
+               android:textColor="#fff"
+               android:textSize="30dp" />
+
+           <ImageView
+               android:id="@+id/imgbtn"
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:layout_marginTop="5dp"
+               android:layout_marginLeft="170dp"
+               android:layout_toRightOf="@+id/tv"
+               android:src="@mipmap/raw_1500034665" />
+       </RelativeLayout>
+       <com.hjm.bottomtabbar.BottomTabBar
+           android:id="@+id/btb"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"></com.hjm.bottomtabbar.BottomTabBar>
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:id="@+id/ll"
+
+        android:layout_gravity="start"
+        android:background="@color/colorAccent"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lv"/>
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>
