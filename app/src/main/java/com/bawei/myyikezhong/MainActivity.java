@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.bawei.myyikezhong.Duanzi.DuanziFragment;
 import com.bawei.myyikezhong.Qutu.QutuFragment;
 import com.bawei.myyikezhong.Shipin.ShipinFragment;
-import com.bawei.myyikezhong.Tuijian.TuijianFragment;
+import com.bawei.myyikezhong.Tuijian.fragment.TuijianFragment;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
 

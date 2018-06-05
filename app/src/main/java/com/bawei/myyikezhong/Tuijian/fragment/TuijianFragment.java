@@ -1,4 +1,4 @@
-package com.bawei.myyikezhong.Tuijian;
+package com.bawei.myyikezhong.Tuijian.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bawei.myyikezhong.R;
+import com.bawei.myyikezhong.Tuijian.adapter.MyAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

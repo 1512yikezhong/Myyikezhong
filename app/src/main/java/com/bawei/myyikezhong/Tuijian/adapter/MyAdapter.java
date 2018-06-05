@@ -1,4 +1,4 @@
-package com.bawei.myyikezhong.Tuijian;
+package com.bawei.myyikezhong.Tuijian.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

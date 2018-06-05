@@ -1,4 +1,4 @@
-package com.bawei.myyikezhong.Tuijian;
+package com.bawei.myyikezhong.Tuijian.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
