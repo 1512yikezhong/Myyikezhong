@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.bawei.myyikezhong.R;
 import com.bawei.myyikezhong.Tuijian.adapter.MyAdapter;
-import com.bawei.myyikezhong.Tuijian.remen.ReMenFragment;
+import com.bawei.myyikezhong.Tuijian.remen.v.ReMenFragment;
 import com.bawei.myyikezhong.Tuijian.ui.GuanZhuFragment;
 
 import java.util.ArrayList;
