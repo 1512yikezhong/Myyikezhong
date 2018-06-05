@@ -12,8 +12,6 @@ import com.bawei.myyikezhong.R;
  * li
  * 起始页
  * */
-
-
 public class FristpageActivity extends AppCompatActivity {
 
     private static final long SPLASH_DELAY_MILLIS = 3000;

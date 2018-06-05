@@ -50,7 +50,10 @@
        <com.hjm.bottomtabbar.BottomTabBar
            android:id="@+id/btb"
            android:layout_width="match_parent"
-           android:layout_height="match_parent"></com.hjm.bottomtabbar.BottomTabBar>
+           android:layout_height="match_parent">
+
+
+       </com.hjm.bottomtabbar.BottomTabBar>
    </LinearLayout>
     <LinearLayout
         android:layout_width="350dp"
