@@ -1,6 +1,7 @@
 package com.bawei.myyikezhong.Tuijian.ui.component;
 
 
+import com.bawei.myyikezhong.Duanzi.DuanziFragment;
 import com.bawei.myyikezhong.Tuijian.ui.GuanZhuFragment;
 import com.bawei.myyikezhong.Tuijian.ui.module.HttpModule;
 
@@ -10,4 +11,6 @@ import dagger.Component;
 public interface HttpComponent {
 
     void  inject(GuanZhuFragment guanZhuFragment);
+
+    void inject(DuanziFragment duanziFragment);
 }

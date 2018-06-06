@@ -15,6 +15,7 @@
         android:orientation="horizontal"
         >
 
+
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/imgtou"
             android:layout_width="50dp"
@@ -30,6 +31,11 @@
             android:layout_marginLeft="15dp"
             />
 
+        <com.bawei.myyikezhong.Tuijian.ui.view.CustomerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.bawei.myyikezhong.Tuijian.ui.view.CustomerView>
     </LinearLayout>
 
     <TextView

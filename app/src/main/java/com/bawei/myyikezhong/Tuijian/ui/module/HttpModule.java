@@ -1,7 +1,10 @@
 package com.bawei.myyikezhong.Tuijian.ui.module;
 
+import com.bawei.myyikezhong.Tuijian.ui.net.DuanziApi;
+import com.bawei.myyikezhong.Tuijian.ui.net.DuanziApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.GuanzhuApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.GuanzhuApiService;
+import com.bawei.myyikezhong.Tuijian.ui.net.MyInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -38,5 +41,25 @@ public class HttpModule {
                 .build()
                 .create(GuanzhuApiService.class);
         return GuanzhuApi.getGuanzhuApi(guanzhuApiService);
+    }
+
+
+    @Provides
+    DuanziApi provideDuanziApi(OkHttpClient.Builder builder){
+
+        builder.addInterceptor(new MyInterceptor());
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://www.zhaoapi.cn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(builder.build())
+                .build();
+
+
+        DuanziApiService duanziApiService = retrofit.create(DuanziApiService.class);
+
+        return DuanziApi.getDuanziApi(duanziApiService);
+
     }
 }
