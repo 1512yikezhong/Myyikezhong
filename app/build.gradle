@@ -56,8 +56,7 @@ dependencies {
     implementation 'com.jcodecraeer:xrecyclerview:1.5.8'
 
 
-    //刷新
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+
 
     //xrecyclerview
     implementation 'com.jcodecraeer:xrecyclerview:1.3.2'
