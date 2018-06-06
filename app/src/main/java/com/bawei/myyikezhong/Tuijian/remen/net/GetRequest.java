@@ -12,9 +12,10 @@ import retrofit2.http.Query;
  */
 
 public interface GetRequest {
+    //轮播
     @GET("quarter/getAd")
     Call<Imgbean> getDame();
-
+    //视频
     @GET("satinApi")
     Call<Videobean> getVideodata(@Query("page") String page);
 }

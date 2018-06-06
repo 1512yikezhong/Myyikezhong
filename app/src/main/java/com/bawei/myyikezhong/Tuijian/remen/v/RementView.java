@@ -11,4 +11,5 @@ public interface RementView {
     void getSuccess(Imgbean body);
     void getVideoSuccess(Videobean body);
 
+    void onBackPressed();
 }

@@ -42,12 +42,12 @@ public class DuanziPresenter extends BasePresenter<DuanziContract.View> implemen
 //                        mView.onSuccess(dataBeans);
 //                    }
 //                });
-        .map(new Function<DuanziBean, List<DuanziBean.DataBean>>() {
-            @Override
-            public List<DuanziBean.DataBean> apply(DuanziBean duanziBean) throws Exception {
-                return duanziBean.getData();
-            }
-        }).observeOn(AndroidSchedulers.mainThread())
+                .map(new Function<DuanziBean, List<DuanziBean.DataBean>>() {
+                    @Override
+                    public List<DuanziBean.DataBean> apply(DuanziBean duanziBean) throws Exception {
+                        return duanziBean.getData();
+                    }
+                }).observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<List<DuanziBean.DataBean>>() {
                     @Override
                     public void accept(List<DuanziBean.DataBean> dataBeans) throws Exception {

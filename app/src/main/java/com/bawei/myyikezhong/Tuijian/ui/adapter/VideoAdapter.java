@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bawei.myyikezhong.R;
 import com.bawei.myyikezhong.Tuijian.ui.bean.VideoBean;
+import com.bumptech.glide.Glide;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
@@ -50,7 +51,9 @@ public class VideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
         videoViewHolder.mVideoplayer.setUp(videouri, JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "视频播放");
 
-
+        /*Glide.with(context.getApplicationContext()).load( dataBean.getBimageuri() ) .into(videoViewHolder.mVideoplayer.thumbImageView);
+        videoViewHolder.mVideoplayer.widthRatio = 4;//播放比例
+        videoViewHolder.mVideoplayer.heightRatio = 3;*/
     }
 
     @Override
