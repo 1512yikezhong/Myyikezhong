@@ -48,7 +48,8 @@ public class VideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return data.size();
     }
 
@@ -70,10 +71,13 @@ public class VideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
 
     public void setData(List<VideoBean.DataBean> list) {
+
         if (data != null) {
+
             data.clear();
             data.addAll(list);
             notifyDataSetChanged();
+
         }
     }
 
