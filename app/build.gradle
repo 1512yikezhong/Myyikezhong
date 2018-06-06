@@ -50,9 +50,13 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     //轮播
-    compile 'com.youth.banner:banner:1.4.10'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    implementation 'com.youth.banner:banner:1.4.10'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
     //xrecyclerview
     implementation 'com.jcodecraeer:xrecyclerview:1.5.8'
+
+
+    //刷新
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
 
 }
