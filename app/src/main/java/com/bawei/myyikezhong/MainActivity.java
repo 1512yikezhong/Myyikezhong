@@ -1,9 +1,11 @@
 package com.bawei.myyikezhong;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 
 import com.bawei.myyikezhong.Duanzi.DuanziFragment;
 import com.bawei.myyikezhong.Qutu.QutuFragment;
+import com.bawei.myyikezhong.SanRegLogin.san.SanfangActivity;
 import com.bawei.myyikezhong.Shipin.ShipinFragment;
 import com.bawei.myyikezhong.Tuijian.fragment.TuijianFragment;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -106,7 +109,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.a:
                 //点击头像登录
-
+                Log.e("ww","点击了头像");
+                //点击头像跳转三方登录页面
+                Intent intent = new Intent(MainActivity.this, SanfangActivity.class);
+                startActivity(intent);
                 break;
 
         }

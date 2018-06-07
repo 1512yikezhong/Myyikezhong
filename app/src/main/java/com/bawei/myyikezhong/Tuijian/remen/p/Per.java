@@ -1,5 +1,6 @@
 package com.bawei.myyikezhong.Tuijian.remen.p;
 
+import com.bawei.myyikezhong.SanRegLogin.reg.RegActivity;
 import com.bawei.myyikezhong.Tuijian.remen.m.Mod;
 import com.bawei.myyikezhong.Tuijian.remen.v.RementView;
 
@@ -15,6 +16,8 @@ public class Per implements PerIm {
         this.rementView = rementView;
          mod = new Mod(rementView);
     }
+
+
 
     /**
      * M层方法
