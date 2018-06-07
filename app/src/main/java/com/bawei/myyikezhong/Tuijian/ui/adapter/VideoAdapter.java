@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.bawei.myyikezhong.R;
 import com.bawei.myyikezhong.Tuijian.ui.bean.VideoBean;
-import com.bumptech.glide.Glide;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
@@ -23,6 +22,7 @@ public class VideoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private Context context;
     private List<VideoBean.DataBean> data;
     private LayoutInflater inflater;
+
 
     public VideoAdapter(Context context, List<VideoBean.DataBean> data) {
         this.context = context;
