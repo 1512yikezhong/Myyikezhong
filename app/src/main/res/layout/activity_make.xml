@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/raw1499917357"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context="com.bawei.myyikezhong.chuangzuo.MakeActivity">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:id="@+id/btnshipin"
+        android:src="@mipmap/shipin"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:id="@+id/btnduanzi"
+        android:src="@mipmap/duanzi"/>
+</LinearLayout>

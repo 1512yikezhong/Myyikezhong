@@ -2,6 +2,7 @@ package com.bawei.myyikezhong.Tuijian.remen.net;
 
 import com.bawei.myyikezhong.SanRegLogin.bean.Userbean;
 import com.bawei.myyikezhong.SanRegLogin.denluzhuce.bean.Studentbean;
+import com.bawei.myyikezhong.SanRegLogin.xiugai.bean.Xiugaibean;
 import com.bawei.myyikezhong.Tuijian.remen.beans.Imgbean;
 import com.bawei.myyikezhong.Tuijian.remen.beans.Videobean;
 
@@ -35,5 +36,11 @@ public interface GetRequest {
     @POST("user/login")
     @FormUrlEncoded
     Call<Studentbean> getlogin(@FieldMap Map<String,String> map);
+
+    //修改密码
+    //quarter/getPass?mobile=15195014384&newPass=654321
+    @POST("quarter/getPass")
+    @FormUrlEncoded
+    Call<Xiugaibean> xiugaipass(@FieldMap Map<String,String> map);
 
 }

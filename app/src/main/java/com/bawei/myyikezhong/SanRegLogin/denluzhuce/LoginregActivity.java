@@ -17,6 +17,7 @@ import com.bawei.myyikezhong.SanRegLogin.denluzhuce.bean.Studentbean;
 import com.bawei.myyikezhong.SanRegLogin.denluzhuce.p.Perer;
 import com.bawei.myyikezhong.SanRegLogin.reg.RegActivity;
 import com.bawei.myyikezhong.SanRegLogin.san.SanfangActivity;
+import com.bawei.myyikezhong.SanRegLogin.wangji.WangjimimaActivity;
 
 public class LoginregActivity extends AppCompatActivity implements View.OnClickListener,Iview {
 
@@ -96,6 +97,8 @@ public class LoginregActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.tv_wangjimima:
                 //跳转忘记密码页面
+                Intent intent3 = new Intent(LoginregActivity.this, WangjimimaActivity.class);
+                startActivity(intent3);
                 break;
             case R.id.tv_youke:
                 //点击游客登录跳转到主页面

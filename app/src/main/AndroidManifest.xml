@@ -31,7 +31,10 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".SanRegLogin.san.SanfangActivity" />
         <activity android:name=".SanRegLogin.denluzhuce.LoginregActivity" />
-        <activity android:name=".SanRegLogin.reg.RegActivity"></activity>
+        <activity android:name=".SanRegLogin.reg.RegActivity" />
+        <activity android:name=".chuangzuo.MakeActivity" />
+        <activity android:name=".SanRegLogin.wangji.WangjimimaActivity" />
+        <activity android:name=".SanRegLogin.xiugai.v.XiugaiActivity"></activity>
     </application>
 
 </manifest>

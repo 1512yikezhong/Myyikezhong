@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.bawei.myyikezhong.R;
 import com.bawei.myyikezhong.SanRegLogin.denluzhuce.LoginregActivity;
 
+
+
 public class SanfangActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageButton mQq;
@@ -19,11 +21,13 @@ public class SanfangActivity extends AppCompatActivity implements View.OnClickLi
      */
     private TextView mOther;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sanfang);
         initView();
+
     }
 
     private void initView() {
@@ -42,6 +46,7 @@ public class SanfangActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.qq:
                 //使用QQ登录
+
                 break;
             case R.id.weixin:
                 //使用微信登录
@@ -53,4 +58,7 @@ public class SanfangActivity extends AppCompatActivity implements View.OnClickLi
                 break;
         }
     }
+
+
+
 }

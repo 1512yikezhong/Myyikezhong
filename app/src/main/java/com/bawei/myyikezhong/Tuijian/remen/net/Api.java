@@ -8,6 +8,7 @@ public interface Api {
     //quarter/getAd
 //https://www.zhaoapi.cn/quarter/register?mobile=15195014384&password=123456
     //https://www.zhaoapi.cn/user/login?mobile=15195014384&password=123456
+    //https://www.zhaoapi.cn/quarter/getPass?mobile=15195014384&newPass=654321
     public  String URL_="https://www.zhaoapi.cn/";
     // https://www.apiopen.top/satinApi?type=4&page=1
     public  String VIDEOURL_="https://www.apiopen.top/";

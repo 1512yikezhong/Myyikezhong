@@ -21,6 +21,7 @@ import com.bawei.myyikezhong.Qutu.QutuFragment;
 import com.bawei.myyikezhong.SanRegLogin.san.SanfangActivity;
 import com.bawei.myyikezhong.Shipin.ShipinFragment;
 import com.bawei.myyikezhong.Tuijian.fragment.TuijianFragment;
+import com.bawei.myyikezhong.chuangzuo.MakeActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
 
@@ -102,6 +103,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
                 break;
             case R.id.imgbtn:
+                //进入创作页面
+                Intent intent1 = new Intent(MainActivity.this, MakeActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.sdv:
                 //点击头像调用侧拉框  左侧出现
