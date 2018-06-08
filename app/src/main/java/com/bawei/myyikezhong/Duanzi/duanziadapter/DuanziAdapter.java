@@ -28,6 +28,8 @@ public class DuanziAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         inflater=LayoutInflater.from(context);
     }
 
+
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -57,6 +59,7 @@ public class DuanziAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         myViewHodel.iv.setImageURI(imUrl);
         myViewHodel.tvName.setText( dataBean.getUser().getNickname()+"");
         myViewHodel.tvTime.setText(dataBean.getCreateTime());
+        myViewHodel.feihua.setText(dataBean.getContent());
 
     }
 
@@ -71,12 +74,15 @@ public class DuanziAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         private final SimpleDraweeView iv;
         private final TextView tvName;
         private final TextView tvTime;
+        private  final  TextView feihua;
+
         public MyViewHodel(View itemView) {
             super(itemView);
 
             iv = itemView.findViewById(R.id.img);
             tvName = itemView.findViewById(R.id.tv_name);
             tvTime = itemView.findViewById(R.id.tv_time);
+             feihua = itemView.findViewById(R.id.feihua);
         }
     }
 

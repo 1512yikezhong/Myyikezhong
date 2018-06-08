@@ -10,4 +10,10 @@ public interface IBase {
 
     void initView(View view);
 
+
+//    int getContentLayout();
+//
+//    void inject();
+//
+//    void initView(View view);
 }

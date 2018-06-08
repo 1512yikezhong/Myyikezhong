@@ -35,6 +35,8 @@
         <activity android:name=".chuangzuo.MakeActivity" />
         <activity android:name=".SanRegLogin.wangji.WangjimimaActivity" />
         <activity android:name=".SanRegLogin.xiugai.v.XiugaiActivity"></activity>
+
+        <activity android:name=".Xiangqing.XiangQingActivity"></activity>
     </application>
 
 </manifest>

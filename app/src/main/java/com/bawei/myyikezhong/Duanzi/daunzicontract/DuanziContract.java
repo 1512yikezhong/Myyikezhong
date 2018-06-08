@@ -10,7 +10,6 @@ import java.util.List;
 public interface DuanziContract {
     interface  View extends BaseContract.BaseView{
 
-
         void onSuccess(List<DuanziBean.DataBean> dataBeans);
 
     }

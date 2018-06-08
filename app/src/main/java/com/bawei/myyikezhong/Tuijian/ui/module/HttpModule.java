@@ -5,6 +5,10 @@ import com.bawei.myyikezhong.Tuijian.ui.net.DuanziApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.GuanzhuApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.GuanzhuApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.MyInterceptor;
+import com.bawei.myyikezhong.Tuijian.ui.net.RemenAoiService;
+import com.bawei.myyikezhong.Tuijian.ui.net.RemenApi;
+import com.bawei.myyikezhong.Tuijian.ui.net.XqApi;
+import com.bawei.myyikezhong.Tuijian.ui.net.XqApiService;
 
 import java.util.concurrent.TimeUnit;
 
@@ -61,5 +65,37 @@ public class HttpModule {
 
         return DuanziApi.getDuanziApi(duanziApiService);
 
+    }
+
+    @Provides
+    RemenApi provideRemenApi(OkHttpClient.Builder builder){
+        builder.addInterceptor(new MyInterceptor());
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://www.zhaoapi.cn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(builder.build())
+                .build();
+
+        RemenAoiService remenAoiService = retrofit.create(RemenAoiService.class);
+        return  RemenApi.getRemenApi(remenAoiService);
+    }
+
+    @Provides
+    XqApi provideXqApi(OkHttpClient.Builder builder){
+
+
+
+        Retrofit retrofit=new Retrofit.Builder()
+                .baseUrl("https://www.zhaoapi.cn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(builder.build())
+                .build();
+
+        XqApiService xqApiService = retrofit.create(XqApiService.class);
+
+        return XqApi.getXqApi(xqApiService);
     }
 }

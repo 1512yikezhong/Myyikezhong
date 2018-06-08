@@ -55,9 +55,9 @@
 
     </LinearLayout>
 
-    <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/img_xia"
+    <TextView
+        android:id="@+id/feihua"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="180dp" />
 
 </LinearLayout>

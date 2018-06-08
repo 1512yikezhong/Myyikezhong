@@ -59,6 +59,5 @@
         android:layout_height="200dp"
 
         >
-
     </fm.jiecao.jcvideoplayer_lib.JCVideoPlayerSimple>
 </LinearLayout>
