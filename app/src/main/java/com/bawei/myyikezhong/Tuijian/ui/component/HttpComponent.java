@@ -2,6 +2,7 @@ package com.bawei.myyikezhong.Tuijian.ui.component;
 
 
 import com.bawei.myyikezhong.Duanzi.DuanziFragment;
+import com.bawei.myyikezhong.Shipin.fujin.FujinFragment;
 import com.bawei.myyikezhong.Shipin.remen.RemenFragment;
 import com.bawei.myyikezhong.Tuijian.ui.GuanZhuFragment;
 import com.bawei.myyikezhong.Tuijian.ui.module.HttpModule;
@@ -19,5 +20,7 @@ public interface HttpComponent {
     void inject(RemenFragment remenFragment);
 
     void inject(XiangQingActivity xiangQingActivity);
+
+    void inject(FujinFragment fujinFragment);
 
 }

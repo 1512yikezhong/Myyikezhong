@@ -2,6 +2,8 @@ package com.bawei.myyikezhong.Tuijian.ui.module;
 
 import com.bawei.myyikezhong.Tuijian.ui.net.DuanziApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.DuanziApiService;
+import com.bawei.myyikezhong.Tuijian.ui.net.FujinApi;
+import com.bawei.myyikezhong.Tuijian.ui.net.FujinApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.GuanzhuApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.GuanzhuApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.MyInterceptor;
@@ -97,5 +99,23 @@ public class HttpModule {
         XqApiService xqApiService = retrofit.create(XqApiService.class);
 
         return XqApi.getXqApi(xqApiService);
+    }
+
+
+    @Provides
+    FujinApi provideFujinApi(OkHttpClient.Builder builder){
+
+      //  builder.addInterceptor(new MyInterceptor());
+
+        Retrofit retrofit=new Retrofit.Builder()
+                .baseUrl("https://www.zhaoapi.cn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(builder.build())
+                .build();
+
+        FujinApiService fujinApiService = retrofit.create(FujinApiService.class);
+        return  FujinApi.getFujinApi(fujinApiService);
+
     }
 }

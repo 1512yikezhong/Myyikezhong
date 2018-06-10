@@ -51,6 +51,8 @@ public class GuanZhuFragment extends BaseFragment<Guanzhuprensenter> implements 
     }
     @Override
     public void videoSuccess(List<VideoBean.DataBean> data) {
+
+
         if (videoAdapter!=null){
 
             videoAdapter.setData(data);
