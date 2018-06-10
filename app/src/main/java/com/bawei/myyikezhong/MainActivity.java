@@ -64,6 +64,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .addTabItem("视频", R.mipmap.raw_1500086067, R.mipmap.raw_1500083686, ShipinFragment.class)
                 .addTabItem("趣图", R.mipmap.raw_1500085367, R.mipmap.raw_1500083878, QutuFragment.class)
                 .isShowDivider(true);
+
+        mBtb.setOnTabChangeListener(new BottomTabBar.OnTabChangeListener() {
+            @Override
+            public void onTabChange(int position, String name) {
+            mTv.setText(name);
+            }
+        });
+
         // SimpleAdapter
         SimpleAdapter simpleAdapter = new SimpleAdapter(this, getData(), R.layout.listview_item, new String[]{"ivPic", "tvText"}, new int[]{R.id.ivPic, R.id.tvtext});
         mLv.setAdapter(simpleAdapter);
@@ -113,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.a:
                 //点击头像登录
-                Log.e("ww","点击了头像");
+                Log.e("ww", "点击了头像");
                 //点击头像跳转三方登录页面
                 Intent intent = new Intent(MainActivity.this, SanfangActivity.class);
                 startActivity(intent);

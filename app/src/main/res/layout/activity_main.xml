@@ -31,10 +31,10 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_gravity="center"
-               android:layout_marginLeft="150dp"
+               android:layout_marginLeft="160dp"
                android:layout_marginTop="5dp"
                android:layout_toRightOf="@+id/sdv"
-               android:text="视频"
+               android:text="推荐"
                android:textColor="#fff"
                android:textSize="30dp" />
 
