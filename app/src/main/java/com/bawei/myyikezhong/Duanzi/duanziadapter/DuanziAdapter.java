@@ -39,7 +39,7 @@ public class DuanziAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
 
 
 
@@ -60,6 +60,15 @@ public class DuanziAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         myViewHodel.tvName.setText( dataBean.getUser().getNickname()+"");
         myViewHodel.tvTime.setText(dataBean.getCreateTime());
         myViewHodel.feihua.setText(dataBean.getContent());
+
+
+        myViewHodel.iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                listener.onClick(v,position);
+            }
+        });
 
     }
 
@@ -102,6 +111,21 @@ public class DuanziAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     public  int getListNum(){
         return list.size();
+
+    }
+
+
+    private DuanziAdapter.Listener listener;
+
+    public void setlistener( DuanziAdapter.Listener listener){
+        this.listener=listener;
+    }
+
+    public interface Listener{
+        //点击事件
+        public void onClick(View view, int position);
+        //长按事件
+        public  void longClick(View view, int position);
 
     }
 }

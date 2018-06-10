@@ -9,6 +9,8 @@ import com.bawei.myyikezhong.Tuijian.ui.net.GuanzhuApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.MyInterceptor;
 import com.bawei.myyikezhong.Tuijian.ui.net.RemenAoiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.RemenApi;
+import com.bawei.myyikezhong.Tuijian.ui.net.UserjmApi;
+import com.bawei.myyikezhong.Tuijian.ui.net.UserjmApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.XqApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.XqApiService;
 
@@ -116,6 +118,22 @@ public class HttpModule {
 
         FujinApiService fujinApiService = retrofit.create(FujinApiService.class);
         return  FujinApi.getFujinApi(fujinApiService);
+
+    }
+
+
+
+    @Provides
+    UserjmApi provideUserjmApi(OkHttpClient.Builder builder){
+        Retrofit retrofit=new Retrofit.Builder()
+                .baseUrl("https://www.zhaoapi.cn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(builder.build())
+                .build();
+
+        UserjmApiService userjmApiService = retrofit.create(UserjmApiService.class);
+        return UserjmApi.getUserjmApi(userjmApiService);
 
     }
 }

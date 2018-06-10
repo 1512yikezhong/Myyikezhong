@@ -5,10 +5,12 @@
     android:orientation="vertical"
     android:layout_margin="10dp"
     android:padding="10dp"
-    android:layout_height="match_parent">
+    android:gravity="center"
+    android:layout_height="wrap_content">
 
 
         <com.facebook.drawee.view.SimpleDraweeView
+
             android:id="@+id/hotimg"
             fresco:placeholderImage="@drawable/touxiang"
             android:layout_width="150dp"

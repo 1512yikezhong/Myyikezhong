@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:face="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    tools:context=".userjm.UserActivity">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+
+        <ImageView
+            android:id="@+id/fanhuis"
+            android:src="@drawable/fanhui"
+            android:layout_width="40dp"
+            android:layout_height="25dp" />
+
+
+       <TextView
+           android:layout_marginLeft="150dp"
+           android:id="@+id/username"
+           android:text="相濡以沫"
+           android:textSize="25dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_marginLeft="80dp"
+            android:src="@drawable/fenxiang"
+            android:layout_width="30dp"
+            android:layout_height="25dp" />
+
+        <ImageView
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/message"
+            android:layout_width="30dp"
+            android:layout_height="25dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="270dp">
+    <ImageView
+        android:src="@drawable/usertou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+
+            android:layout_marginLeft="20dp"
+            android:id="@+id/imgx"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            fresco:placeholderImage="@drawable/touxiang"
+            face:roundAsCircle="true"
+            />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:text="天蝎喝牛奶"
+                android:layout_marginTop="10dp"
+                android:id="@+id/userninam"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="2018.210983,s28"
+                android:layout_marginTop="10dp"
+                android:id="@+id/shijian"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"  />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/gaunzhu"
+            android:text="关注"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>

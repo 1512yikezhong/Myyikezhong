@@ -1,5 +1,6 @@
 package com.bawei.myyikezhong.Duanzi;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
@@ -9,6 +10,7 @@ import com.bawei.myyikezhong.R;
 import com.bawei.myyikezhong.Tuijian.ui.base.BaseFragment;
 import com.bawei.myyikezhong.Tuijian.ui.bean.DuanziBean;
 import com.bawei.myyikezhong.Tuijian.ui.component.DaggerHttpComponent;
+import com.bawei.myyikezhong.userjm.UserActivity;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
@@ -72,6 +74,26 @@ public class DuanziFragment extends BaseFragment<DuanziPresenter>implements  Dua
                 page++;
                 isRefresh=false;
                 mPresenter.getDuanzi(page+"");
+
+            }
+        });
+
+
+        duanziAdapter.setlistener(new DuanziAdapter.Listener() {
+            @Override
+            public void onClick(View view, int position) {
+
+                //startActivity(new Intent(getContext(), UserActivity.class));
+
+
+                Intent intent=new Intent(getContext(), UserActivity.class);
+                intent.putExtra("uid",list.get(position).getUid());
+              //  intent.putExtra("token",list.get(position))
+                startActivity(intent);
+            }
+
+            @Override
+            public void longClick(View view, int position) {
 
             }
         });
