@@ -1,5 +1,6 @@
 package com.bawei.myyikezhong.Tuijian.remen.net;
 
+import com.bawei.myyikezhong.Qutu.bean.Qutubean;
 import com.bawei.myyikezhong.SanRegLogin.bean.Userbean;
 import com.bawei.myyikezhong.SanRegLogin.denluzhuce.bean.Studentbean;
 import com.bawei.myyikezhong.SanRegLogin.xiugai.bean.Xiugaibean;
@@ -43,4 +44,8 @@ public interface GetRequest {
     @FormUrlEncoded
     Call<Xiugaibean> xiugaipass(@FieldMap Map<String,String> map);
 
+    //// ?uid=71&token=C9E316BA0DBF0A4926320921E70C112D
+    @POST("quarter/getWorkInfo")
+    @FormUrlEncoded
+    Call<Qutubean> getqutu(@FieldMap Map<String,String> map);
 }
