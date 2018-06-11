@@ -35,7 +35,8 @@
         <ImageView
             android:layout_width="60dp"
             android:layout_height="40dp"
-            android:src="@drawable/fenxiang" />
+            android:src="@drawable/fenxiang"
+            android:id="@+id/btn_img"/>
 
 
         <com.facebook.drawee.view.SimpleDraweeView

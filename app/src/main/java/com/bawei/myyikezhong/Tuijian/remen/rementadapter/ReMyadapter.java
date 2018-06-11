@@ -1,5 +1,6 @@
 package com.bawei.myyikezhong.Tuijian.remen.rementadapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -8,12 +9,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.bawei.myyikezhong.R;
 import com.bawei.myyikezhong.Tuijian.remen.beans.Videobean;
+import com.bawei.myyikezhong.shard.Shared;
 import com.bumptech.glide.Glide;
 import com.facebook.drawee.view.SimpleDraweeView;
 
@@ -45,7 +48,7 @@ public class ReMyadapter extends RecyclerView.Adapter<ReMyadapter.Myviewholder> 
 
     @Override
     public void onBindViewHolder(@NonNull final Myviewholder holder, int position) {
-        Videobean.DataBean db = data.get(position);
+        final Videobean.DataBean db = data.get(position);
         //头像
         if (db.getProfile_image()!=null&!"".equals(db.getProfile_image()) ){
             holder.ivsdv.setImageURI(db.getProfile_image());
@@ -71,7 +74,7 @@ public class ReMyadapter extends RecyclerView.Adapter<ReMyadapter.Myviewholder> 
         holder.jcVideoPlayerStandard.heightRatio = 3;
 
 
-     //   Log.e("aaaaqq",db.getLove()+db.getHate()+db.getComment()+db.getBookmark());
+         Log.e("aaaaqq",db.getVideouri());
         //点赞
         if(db.getLove()!=null&!"".equals(db.getLove())){
              holder.love.setText(db.getLove());
@@ -92,12 +95,12 @@ public class ReMyadapter extends RecyclerView.Adapter<ReMyadapter.Myviewholder> 
         /**
          * 分享   第三方
          */
-        holder.shard.setOnClickListener(new View.OnClickListener() {
+        holder.btn_shard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //分享
-
-                
+             //   Log.e("xxxxxx","飞享");
+                new Shared((Activity) context,db.getVideouri()).getshard();
             }
         });
 
@@ -128,6 +131,7 @@ public class ReMyadapter extends RecyclerView.Adapter<ReMyadapter.Myviewholder> 
         public  TextView xing;
         public  TextView shard;
         public  TextView ping;
+        public ImageView btn_shard;
         public Myviewholder(View itemView) {
             super(itemView);
             ivsdv=itemView.findViewById(R.id.ivsdv);
@@ -139,6 +143,7 @@ public class ReMyadapter extends RecyclerView.Adapter<ReMyadapter.Myviewholder> 
             xing=itemView.findViewById(R.id.xing);
             shard=itemView.findViewById(R.id.shard);
             ping=itemView.findViewById(R.id.ping);
+            btn_shard = itemView.findViewById(R.id.btn_shard);
         }
     }
 

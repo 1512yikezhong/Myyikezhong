@@ -1,5 +1,6 @@
 package com.bawei.myyikezhong.Qutu.v;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,12 +8,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bawei.myyikezhong.Qutu.bean.Qutubean;
 import com.bawei.myyikezhong.Qutu.p.QuPerer;
 import com.bawei.myyikezhong.R;
+import com.bawei.myyikezhong.shard.Shared;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.controller.AbstractDraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -41,11 +44,12 @@ public class QutuFragment extends Fragment implements QuView, View.OnClickListen
     private TextView mTvtime;
     private TextView mTvbody;
     private SimpleDraweeView mImgsdv;
-
+    private ImageView mBtIm;
+    private  String imgurl;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-         view = inflater.inflate(R.layout.layout_qutu, container, false);
+        view = inflater.inflate(R.layout.layout_qutu, container, false);
         map.put("uid", uid);
         map.put("token", token);
         new QuPerer(this).login(map);
@@ -55,7 +59,8 @@ public class QutuFragment extends Fragment implements QuView, View.OnClickListen
 
     @Override
     public void getSuccess(Qutubean body) {
-      //  Log.e("sssss", body.getMsg());
+        //  Log.e("sssss", body.getMsg());
+        imgurl=body.getData().getWorksEntities().get(0).getCover();
         //加载头像
         AbstractDraweeController controller = Fresco.newDraweeControllerBuilder()
                 //图片地址
@@ -80,7 +85,7 @@ public class QutuFragment extends Fragment implements QuView, View.OnClickListen
         mImgsdv.setController(controller1);
         mTvname.setText(body.getData().getUser().getNickname());
         mTvtime.setText(body.getData().getWorksEntities().get(0).getCreateTime());
-        mTvbody.setText(body.getData().getWorksEntities().get(0).getCommentNum()+"");
+        mTvbody.setText(body.getData().getWorksEntities().get(0).getCommentNum() + "");
     }
 
     private void initView(View view) {
@@ -90,10 +95,13 @@ public class QutuFragment extends Fragment implements QuView, View.OnClickListen
         mTvtime = (TextView) view.findViewById(R.id.tvtime);
         mTvbody = (TextView) view.findViewById(R.id.tvbody);
         mImgsdv = (SimpleDraweeView) view.findViewById(R.id.imgsdv);
+        mBtIm = (ImageView) view.findViewById(R.id.bt_im);
+        mBtIm.setOnClickListener(this);
     }
 
     /**
      * 点击头像显示个人信息
+     *
      * @param v
      */
     @Override
@@ -102,7 +110,11 @@ public class QutuFragment extends Fragment implements QuView, View.OnClickListen
             default:
                 break;
             case R.id.imghead:
-                Toast.makeText(getActivity(),"点击头像显示个人信息",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "点击头像显示个人信息", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.bt_im:
+                Log.e("qazxsw","点击了飞享按钮");
+                new Shared((Activity) getContext(),imgurl);
                 break;
         }
     }

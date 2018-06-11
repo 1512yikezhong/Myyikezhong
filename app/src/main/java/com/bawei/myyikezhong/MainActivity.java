@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .addTabItem("视频", R.mipmap.raw_1500086067, R.mipmap.raw_1500083686, ShipinFragment.class)
                 .addTabItem("趣图", R.mipmap.raw_1500085367, R.mipmap.raw_1500083878, QutuFragment.class)
                 .isShowDivider(true);
-
+///BottomTabBar 的监听事件
         mBtb.setOnTabChangeListener(new BottomTabBar.OnTabChangeListener() {
             @Override
             public void onTabChange(int position, String name) {

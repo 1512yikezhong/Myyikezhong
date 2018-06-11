@@ -1,6 +1,7 @@
 package com.bawei.myyikezhong.Xiangqing;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -9,6 +10,7 @@ import com.bawei.myyikezhong.R;
 import com.bawei.myyikezhong.Tuijian.ui.base.BaseActivity;
 import com.bawei.myyikezhong.Tuijian.ui.bean.XqBean;
 import com.bawei.myyikezhong.Tuijian.ui.component.DaggerHttpComponent;
+import com.bawei.myyikezhong.shard.Shared;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerSimple;
@@ -22,7 +24,7 @@ public class XiangQingActivity extends BaseActivity<Xiangqingpresenter> implemen
    private  TextView  nishuo;
    private TextView niha;
    private ImageView fanhui;
-
+    private ImageView btnimg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,16 +66,16 @@ public class XiangQingActivity extends BaseActivity<Xiangqingpresenter> implemen
 
        niha=  findViewById(R.id.texts);
          fanhui = findViewById(R.id.fanhui);
-
+        btnimg=findViewById(R.id.btn_img);
          fanhui.setOnClickListener( this);
 
     }
 
     @Override
-    public void XqSuccess(XqBean data) {
+    public void XqSuccess(final XqBean data) {
 
 
-        String videoUrl = data.getData().getVideoUrl();
+        final String videoUrl = data.getData().getVideoUrl();
         //视频判空
         if(videoUrl==null){
             return;
@@ -83,7 +85,13 @@ public class XiangQingActivity extends BaseActivity<Xiangqingpresenter> implemen
         tou.setImageURI(data.getData().getUser().getIcon());
         nishuo.setText(data.getData().getUser().getNickname());
         niha.setText(data.getData().getCreateTime());
-
+        btnimg.setOnClickListener(new android.view.View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View view) {
+                Log.e("qazxsw","点击了飞享按钮111");
+                new Shared(XiangQingActivity.this,videoUrl);
+            }
+        });
     }
 
 
