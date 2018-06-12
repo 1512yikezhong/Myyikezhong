@@ -6,6 +6,8 @@ import com.bawei.myyikezhong.Tuijian.ui.net.FujinApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.FujinApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.GuanzhuApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.GuanzhuApiService;
+import com.bawei.myyikezhong.Tuijian.ui.net.MuGuanzhuApi;
+import com.bawei.myyikezhong.Tuijian.ui.net.MyGuanzhuApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.MyInterceptor;
 import com.bawei.myyikezhong.Tuijian.ui.net.RemenAoiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.RemenApi;
@@ -136,4 +138,20 @@ public class HttpModule {
         return UserjmApi.getUserjmApi(userjmApiService);
 
     }
+
+    @Provides
+    MuGuanzhuApi provideMuGuanzhuApi(OkHttpClient.Builder builder){
+        Retrofit retrofit=new Retrofit.Builder()
+                .baseUrl("https://www.zhaoapi.cn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(builder.build())
+                .build();
+
+        MyGuanzhuApiService myGuanzhuApiService = retrofit.create(MyGuanzhuApiService.class);
+        return MuGuanzhuApi.getMuGuanzhuApi(myGuanzhuApiService);
+
+    }
+
+
 }

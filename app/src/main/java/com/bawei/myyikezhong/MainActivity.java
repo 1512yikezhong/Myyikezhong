@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bawei.myyikezhong.Duanzi.DuanziFragment;
 import com.bawei.myyikezhong.Qutu.v.QutuFragment;
@@ -22,6 +21,7 @@ import com.bawei.myyikezhong.SanRegLogin.san.SanfangActivity;
 import com.bawei.myyikezhong.Shipin.ShipinFragment;
 import com.bawei.myyikezhong.Tuijian.fragment.TuijianFragment;
 import com.bawei.myyikezhong.chuangzuo.MakeActivity;
+import com.bawei.myyikezhong.myguanzhu.MyGuanzhuActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
 
@@ -79,8 +79,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this, tvarr[i], Toast.LENGTH_SHORT).show();
+
+               // Toast.makeText(MainActivity.this, tvarr[i], Toast.LENGTH_SHORT).show();
+
+                if(tvarr[i].contains("关注")){
+                    Log.e("aaaaaa",tvarr[i]);
+                    startActivity(new Intent(MainActivity.this, MyGuanzhuActivity.class));
+
+                }else if(tvarr[i].contains("收藏")){
+                    Log.e("aaaaaa",tvarr[i]);
+                }else if(tvarr[i].contains("好友")){
+                    Log.e("aaaaaa",tvarr[i]);
+                }else if(tvarr[i].contains("通知")){
+                    Log.e("aaaaaa",tvarr[i]);
+                }
+
                 mDl.closeDrawer(mLl);
+
             }
         });
     }

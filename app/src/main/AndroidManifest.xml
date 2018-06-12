@@ -36,7 +36,8 @@
         <activity android:name=".SanRegLogin.wangji.WangjimimaActivity" />
         <activity android:name=".SanRegLogin.xiugai.v.XiugaiActivity" />
         <activity android:name=".Xiangqing.XiangQingActivity" />
-        <activity android:name=".userjm.UserActivity"></activity>
+        <activity android:name=".userjm.UserActivity" />
+        <activity android:name=".myguanzhu.MyGuanzhuActivity"></activity>
 
 
 
