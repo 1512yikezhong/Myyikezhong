@@ -9,6 +9,8 @@ import com.bawei.myyikezhong.Tuijian.ui.net.GuanzhuApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.MuGuanzhuApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.MyGuanzhuApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.MyInterceptor;
+import com.bawei.myyikezhong.Tuijian.ui.net.MyScApi;
+import com.bawei.myyikezhong.Tuijian.ui.net.MyScApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.RemenAoiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.RemenApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.UserjmApi;
@@ -153,5 +155,19 @@ public class HttpModule {
 
     }
 
+    @Provides
+    MyScApi provideMyScApi(OkHttpClient.Builder builder){
+       // builder.addInterceptor(new MyInterceptor());
+        Retrofit retrofit=new Retrofit.Builder()
+                .baseUrl("https://www.zhaoapi.cn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(builder.build())
+                .build();
+
+        MyScApiService myScApiService = retrofit.create(MyScApiService.class);
+        return MyScApi.getMyScApi(myScApiService);
+
+    }
 
 }

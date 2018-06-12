@@ -37,11 +37,7 @@
         <activity android:name=".SanRegLogin.xiugai.v.XiugaiActivity" />
         <activity android:name=".Xiangqing.XiangQingActivity" />
         <activity android:name=".userjm.UserActivity" />
-        <activity android:name=".myguanzhu.MyGuanzhuActivity"></activity>
-
-
-
-
+        <activity android:name=".myguanzhu.MyGuanzhuActivity" />
         //微信
         <activity
             android:name=".wxapi.WXEntryActivity"
@@ -53,18 +49,22 @@
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
-            android:noHistory="true" >
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="tencent1106791289" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:configChanges="orientation|keyboardHidden|screenSize"/>
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".FbJokeActivity" />
+        <activity android:name=".myshoucang.MyShoucangActivity"></activity>
     </application>
 
 </manifest>

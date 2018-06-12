@@ -40,6 +40,7 @@ public class MyGuanzhuActivity extends BaseActivity<MyGuanzhuPresenter> implemen
 
     @Override
     public int getContentLayout() {
+
         return R.layout.activity_my_guanzhu;
     }
 
@@ -65,9 +66,10 @@ public class MyGuanzhuActivity extends BaseActivity<MyGuanzhuPresenter> implemen
     @Override
     public void myGunzhu(List<MyGuanzhuBean.DataBean> data) {
 
-
         myguanzhu.setLayoutManager(new LinearLayoutManager(MyGuanzhuActivity.this, LinearLayoutManager.VERTICAL,false));
+
         myGzAdapter = new MyGzAdapter(this, data);
+
         myguanzhu.setAdapter(myGzAdapter);
 
 
