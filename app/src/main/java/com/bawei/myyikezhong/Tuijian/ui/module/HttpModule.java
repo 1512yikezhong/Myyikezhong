@@ -13,6 +13,10 @@ import com.bawei.myyikezhong.Tuijian.ui.net.MyScApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.MyScApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.RemenAoiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.RemenApi;
+import com.bawei.myyikezhong.Tuijian.ui.net.SousuoApi;
+import com.bawei.myyikezhong.Tuijian.ui.net.SousuoApiService;
+import com.bawei.myyikezhong.Tuijian.ui.net.SuijiApi;
+import com.bawei.myyikezhong.Tuijian.ui.net.SuijiApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.UserjmApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.UserjmApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.XqApi;
@@ -168,6 +172,33 @@ public class HttpModule {
         MyScApiService myScApiService = retrofit.create(MyScApiService.class);
         return MyScApi.getMyScApi(myScApiService);
 
+    }
+
+    @Provides
+    SousuoApi provideSousuoApi (OkHttpClient.Builder builder){
+        Retrofit retrofit=new Retrofit.Builder()
+                .baseUrl("https://www.zhaoapi.cn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(builder.build())
+                .build();
+
+        SousuoApiService sousuoApiService = retrofit.create(SousuoApiService.class);
+        return SousuoApi.getSousuoApi(sousuoApiService);
+
+    }
+
+    @Provides
+    SuijiApi provideSuijiApi (OkHttpClient.Builder builder){
+        Retrofit retrofit=new Retrofit.Builder()
+                .baseUrl("https://www.zhaoapi.cn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(builder.build())
+                .build();
+        SuijiApiService suijiApiService = retrofit.create(SuijiApiService.class);
+
+        return  SuijiApi.getSuijiApi(suijiApiService);
     }
 
 }

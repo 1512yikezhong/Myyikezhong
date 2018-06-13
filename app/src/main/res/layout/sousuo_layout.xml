@@ -8,16 +8,15 @@
 
 
 
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="60dp">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
 
 
         <com.facebook.drawee.view.SimpleDraweeView
             fresco:placeholderImage="@drawable/touxiang"
-            android:id="@+id/touxiangx"
+            android:id="@+id/touxiangxs"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
@@ -29,17 +28,17 @@
             android:layout_width="300dp"
             android:layout_height="60dp">
 
-        <TextView
-            android:text="nishuosha"
-            android:id="@+id/textuser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            />
+            <TextView
+                android:text="nishuosha"
+                android:id="@+id/textusers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                />
 
             <TextView
                 android:text="haha"
-                android:id="@+id/usersay"
+                android:id="@+id/usersays"
                 android:layout_marginLeft="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -49,13 +48,12 @@
 
         <TextView
             android:text="nishuosha"
-            android:id="@+id/shijainx"
+            android:id="@+id/shijainxs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             />
 
 
 
-</LinearLayout>
-
+    </LinearLayout>
 </LinearLayout>

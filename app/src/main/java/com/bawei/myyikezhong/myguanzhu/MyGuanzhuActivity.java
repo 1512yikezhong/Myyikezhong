@@ -13,7 +13,7 @@ import com.bawei.myyikezhong.Tuijian.ui.component.DaggerHttpComponent;
 
 import java.util.List;
 
-public class MyGuanzhuActivity extends BaseActivity<MyGuanzhuPresenter> implements  MyGuanzhuContract.View , View.OnClickListener {
+public class MyGuanzhuActivity extends BaseActivity<MyGuanzhuPresenter> implements  View.OnClickListener,MyGuanzhuContract.View  {
 
     private RecyclerView myguanzhu;
     private ImageView fanhuis;
@@ -54,14 +54,7 @@ public class MyGuanzhuActivity extends BaseActivity<MyGuanzhuPresenter> implemen
 
 
 
-    @Override
-    public void onClick(android.view.View v) {
-        switch (v.getId()){
-            case R.id.fanhuis:
-                finish();//返回上一层
-                break;
-        }
-    }
+
 
     @Override
     public void myGunzhu(List<MyGuanzhuBean.DataBean> data) {
@@ -76,4 +69,14 @@ public class MyGuanzhuActivity extends BaseActivity<MyGuanzhuPresenter> implemen
     }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            default:
+                break;
+            case R.id.fanhuis:
+                finish();
+                break;
+        }
+    }
 }

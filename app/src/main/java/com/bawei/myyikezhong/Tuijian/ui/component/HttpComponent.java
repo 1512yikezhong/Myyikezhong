@@ -9,6 +9,7 @@ import com.bawei.myyikezhong.Tuijian.ui.module.HttpModule;
 import com.bawei.myyikezhong.Xiangqing.XiangQingActivity;
 import com.bawei.myyikezhong.myguanzhu.MyGuanzhuActivity;
 import com.bawei.myyikezhong.myshoucang.MyShoucangActivity;
+import com.bawei.myyikezhong.sousuo.SousuoActivity;
 import com.bawei.myyikezhong.userjm.UserActivity;
 
 import dagger.Component;
@@ -32,5 +33,7 @@ public interface HttpComponent {
     void inject(MyGuanzhuActivity myGuanzhuActivity);
 
     void inject(MyShoucangActivity myShoucangActivity);
+
+    void  inject(SousuoActivity sousuoActivity);
 
 }

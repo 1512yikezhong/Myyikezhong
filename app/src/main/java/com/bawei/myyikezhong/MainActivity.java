@@ -21,8 +21,10 @@ import com.bawei.myyikezhong.SanRegLogin.san.SanfangActivity;
 import com.bawei.myyikezhong.Shipin.ShipinFragment;
 import com.bawei.myyikezhong.Tuijian.fragment.TuijianFragment;
 import com.bawei.myyikezhong.chuangzuo.MakeActivity;
+import com.bawei.myyikezhong.message.MessageActivity;
 import com.bawei.myyikezhong.myguanzhu.MyGuanzhuActivity;
 import com.bawei.myyikezhong.myshoucang.MyShoucangActivity;
+import com.bawei.myyikezhong.sousuo.SousuoActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
 
@@ -93,8 +95,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     startActivity(new Intent(MainActivity.this, MyShoucangActivity.class));
                 }else if(tvarr[i].contains("好友")){
                     Log.e("aaaaaa",tvarr[i]);
+
+                    startActivity(new Intent(MainActivity.this, SousuoActivity.class));
                 }else if(tvarr[i].contains("通知")){
                     Log.e("aaaaaa",tvarr[i]);
+
+                    startActivity(new Intent(MainActivity.this, MessageActivity.class));
 
                 }
 
