@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if(tvarr[i].contains("关注")){
                     Log.e("aaaaaa",tvarr[i]);
-                    startActivity(new Intent(MainActivity.this, MyGuanzhuActivity.class));
+                  //  startActivity(new Intent(MainActivity.this, MyGuanzhuActivity.class));
 
                 }else if(tvarr[i].contains("收藏")){
                     Log.e("aaaaaa",tvarr[i]);

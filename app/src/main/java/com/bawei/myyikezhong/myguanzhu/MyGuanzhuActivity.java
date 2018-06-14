@@ -3,8 +3,10 @@ package com.bawei.myyikezhong.myguanzhu;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bawei.myyikezhong.R;
 import com.bawei.myyikezhong.Tuijian.ui.base.BaseActivity;
@@ -12,6 +14,8 @@ import com.bawei.myyikezhong.Tuijian.ui.bean.MyGuanzhuBean;
 import com.bawei.myyikezhong.Tuijian.ui.component.DaggerHttpComponent;
 
 import java.util.List;
+
+import rx.observers.TestObserver;
 
 public class MyGuanzhuActivity extends BaseActivity<MyGuanzhuPresenter> implements  View.OnClickListener,MyGuanzhuContract.View  {
 
@@ -27,7 +31,7 @@ public class MyGuanzhuActivity extends BaseActivity<MyGuanzhuPresenter> implemen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+            Log.e("asasasas","aaaaaaaaa");
         myguanzhu = findViewById(R.id.myguanzhu);
 
         fanhuis = findViewById(R.id.fanhuixs);
@@ -59,12 +63,16 @@ public class MyGuanzhuActivity extends BaseActivity<MyGuanzhuPresenter> implemen
     @Override
     public void myGunzhu(List<MyGuanzhuBean.DataBean> data) {
 
-        myguanzhu.setLayoutManager(new LinearLayoutManager(MyGuanzhuActivity.this, LinearLayoutManager.VERTICAL,false));
+      if(data!=null){
+          myguanzhu.setLayoutManager(new LinearLayoutManager(MyGuanzhuActivity.this, LinearLayoutManager.VERTICAL,false));
 
-        myGzAdapter = new MyGzAdapter(this, data);
+          myGzAdapter = new MyGzAdapter(this, data);
 
-        myguanzhu.setAdapter(myGzAdapter);
+          myguanzhu.setAdapter(myGzAdapter);
 
+      }else{
+          Toast.makeText(this,"空",Toast.LENGTH_SHORT).show();
+      }
 
     }
 

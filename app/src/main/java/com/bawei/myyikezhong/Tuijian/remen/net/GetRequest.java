@@ -1,5 +1,6 @@
 package com.bawei.myyikezhong.Tuijian.remen.net;
 
+import com.bawei.myyikezhong.Bianxie.bean.Duanzibean;
 import com.bawei.myyikezhong.Qutu.bean.Qutubean;
 import com.bawei.myyikezhong.SanRegLogin.bean.Userbean;
 import com.bawei.myyikezhong.SanRegLogin.denluzhuce.bean.Studentbean;
@@ -48,4 +49,10 @@ public interface GetRequest {
     @POST("quarter/getWorkInfo")
     @FormUrlEncoded
     Call<Qutubean> getqutu(@FieldMap Map<String,String> map);
+
+
+    //quarter/publishJoke
+    @POST("quarter/publishJoke")
+    @FormUrlEncoded
+    Call<Duanzibean> getduanzi(@FieldMap Map<String,String> map);
 }

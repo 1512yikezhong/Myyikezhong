@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bawei.myyikezhong.R;
 import com.bawei.myyikezhong.Tuijian.ui.base.BaseActivity;
@@ -51,9 +52,13 @@ public class MyShoucangActivity extends BaseActivity<MyScPresengter>  implements
     @Override
     public void myShoucang(List<MyshoucangBean.DataBean> data) {
 
-        myshoucang.setLayoutManager(new LinearLayoutManager(MyShoucangActivity.this, LinearLayoutManager.VERTICAL,false));
-        myShoucAdapter = new MyShoucAdapter(this, data);
-        myshoucang.setAdapter(myShoucAdapter);
+      if(data!=null){
+          myshoucang.setLayoutManager(new LinearLayoutManager(MyShoucangActivity.this, LinearLayoutManager.VERTICAL,false));
+          myShoucAdapter = new MyShoucAdapter(this, data);
+          myshoucang.setAdapter(myShoucAdapter);
+      }else {
+          Toast.makeText(this,"空",Toast.LENGTH_SHORT).show();
+      }
 
 
     }

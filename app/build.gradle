@@ -86,4 +86,7 @@ dependencies {
     implementation files('libs/umeng-share-sina-simplify-6.9.1.jar')
     implementation files('libs/umeng-share-wechat-simplify-6.9.1.jar')
     implementation files('libs/umeng-sharetool-6.9.1.jar')
+
+    //富文本编辑器
+    compile 'com.huangdali:mricheditor:1.0.1'
 }
