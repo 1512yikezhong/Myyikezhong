@@ -2,7 +2,9 @@ package com.bawei.myyikezhong.Tuijian.ui.guanzhu.presenter;
 
 import com.bawei.myyikezhong.Tuijian.ui.base.BasePresenter;
 import com.bawei.myyikezhong.Tuijian.ui.bean.VideoBean;
+import com.bawei.myyikezhong.Tuijian.ui.bean.YesBean;
 import com.bawei.myyikezhong.Tuijian.ui.guanzhu.contract.GuanzhuContract;
+import com.bawei.myyikezhong.Tuijian.ui.net.DianzanApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.GuanzhuApi;
 
 import java.util.List;
@@ -18,9 +20,14 @@ public class Guanzhuprensenter  extends BasePresenter<GuanzhuContract.View>imple
 
     private GuanzhuApi guanzhuApi;
 
+    private DianzanApi dianzanApi;
+
     @Inject
-    public Guanzhuprensenter(GuanzhuApi guanzhuApi){
+    public Guanzhuprensenter(GuanzhuApi guanzhuApi ,DianzanApi DianzanApi){
+
         this.guanzhuApi=guanzhuApi;
+        this.dianzanApi=DianzanApi;
+
     }
 
     @Override
@@ -45,5 +52,21 @@ public class Guanzhuprensenter  extends BasePresenter<GuanzhuContract.View>imple
         });
 
     }
+
+    @Override
+    public void dianzan(String uid, String token, String wid) {
+
+        dianzanApi.getdianzan(uid, token, wid).observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Consumer<YesBean>() {
+                    @Override
+                    public void accept(YesBean yesBean) throws Exception {
+                        if (mView!=null){
+                           mView.dianzan(yesBean);
+                        }
+                    }
+                });
+    }
+
 
 }

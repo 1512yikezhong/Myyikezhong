@@ -22,7 +22,7 @@ import com.bawei.myyikezhong.Shipin.ShipinFragment;
 import com.bawei.myyikezhong.Tuijian.fragment.TuijianFragment;
 import com.bawei.myyikezhong.chuangzuo.MakeActivity;
 import com.bawei.myyikezhong.message.MessageActivity;
-import com.bawei.myyikezhong.myguanzhu.MyGuanzhuActivity;
+import com.bawei.myyikezhong.myguanzhu.GuanZhuActivity;
 import com.bawei.myyikezhong.myshoucang.MyShoucangActivity;
 import com.bawei.myyikezhong.sousuo.SousuoActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if(tvarr[i].contains("关注")){
                     Log.e("aaaaaa",tvarr[i]);
-                  //  startActivity(new Intent(MainActivity.this, MyGuanzhuActivity.class));
+                    startActivity(new Intent(MainActivity.this, GuanZhuActivity.class));
 
                 }else if(tvarr[i].contains("收藏")){
                     Log.e("aaaaaa",tvarr[i]);

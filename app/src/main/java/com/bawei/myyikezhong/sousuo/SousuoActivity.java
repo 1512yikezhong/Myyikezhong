@@ -26,7 +26,7 @@ public class SousuoActivity extends BaseActivity<SousuoPresenter> implements Sou
     private EditText shuru;
 
     private   Button btm;
-private  SuijiAdapter suijiAdapter;
+    private  SuijiAdapter suijiAdapter;
 
 
 
@@ -39,8 +39,9 @@ private  SuijiAdapter suijiAdapter;
          shuru = findViewById(R.id.souuser);
          btm = findViewById(R.id.soussuo);
 
-
-        mPresenter.suiji();
+         if (mPresenter!=null){
+             mPresenter.suiji();
+         }
 
         btm.setOnClickListener(new View.OnClickListener() {
              @Override
@@ -74,21 +75,27 @@ private  SuijiAdapter suijiAdapter;
     @Override
     public void sousuo(List<SousuoBean.DataBean> data) {
 
+if (data!=null){
+    sousuo.setLayoutManager(new LinearLayoutManager(SousuoActivity.this, LinearLayoutManager.VERTICAL,false));
 
-        sousuo.setLayoutManager(new LinearLayoutManager(SousuoActivity.this, LinearLayoutManager.VERTICAL,false));
+    sousuoAdapter= new SousuoAdapter(this, data);
+    sousuo.setAdapter(sousuoAdapter);
+}
 
-        sousuoAdapter= new SousuoAdapter(this, data);
-        sousuo.setAdapter(sousuoAdapter);
 
     }
 
     @Override
     public void suiji(List<SuijiBean.DataBean> data) {
 
-        sousuo.setLayoutManager(new LinearLayoutManager(SousuoActivity.this, LinearLayoutManager.VERTICAL,false));
+        if (data!=null){
+            sousuo.setLayoutManager(new LinearLayoutManager(SousuoActivity.this, LinearLayoutManager.VERTICAL,false));
 
-        suijiAdapter= new SuijiAdapter(this, data);
-        sousuo.setAdapter(suijiAdapter);
+            suijiAdapter= new SuijiAdapter(this, data);
+            sousuo.setAdapter(suijiAdapter);
+        }
+
+
 
 
     }

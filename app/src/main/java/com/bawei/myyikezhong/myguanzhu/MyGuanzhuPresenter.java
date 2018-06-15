@@ -36,7 +36,10 @@ public class MyGuanzhuPresenter extends BasePresenter<MyGuanzhuContract.View> im
                 }).subscribe(new Consumer<List<MyGuanzhuBean.DataBean>>() {
             @Override
             public void accept(List<MyGuanzhuBean.DataBean> dataBeans) throws Exception {
-                      mView.myGunzhu(dataBeans);
+                if (mView!=null){
+                    mView.myGunzhu(dataBeans);
+                }
+
             }
         })     ;
 

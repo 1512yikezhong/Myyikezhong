@@ -29,7 +29,10 @@ public class MyShoucangActivity extends BaseActivity<MyScPresengter>  implements
         fanhuisc=  findViewById(R.id.fanhuisc);
         fanhuisc.setOnClickListener(this);
 
-        mPresenter.myShoucang("11068","C55773B10ABD8BFB6739BD5C16D6F803");
+        if (mPresenter!=null){
+            mPresenter.myShoucang("11068","C55773B10ABD8BFB6739BD5C16D6F803");
+        }
+
 
     }
 

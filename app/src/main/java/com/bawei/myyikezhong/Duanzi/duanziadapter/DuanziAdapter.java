@@ -66,7 +66,8 @@ public class DuanziAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             @Override
             public void onClick(View v) {
 
-                listener.onClick(v,position);
+             listener.onClick(v,position);
+
             }
         });
 
@@ -108,6 +109,8 @@ public class DuanziAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         this.list.addAll(templist);
         notifyDataSetChanged();
     }
+
+
 
     public  int getListNum(){
         return list.size();

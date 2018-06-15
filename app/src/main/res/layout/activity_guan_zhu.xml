@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".myguanzhu.MyGuanzhuActivity">
-
+    tools:context=".myguanzhu.GuanZhuActivity">
 
 
     <LinearLayout
@@ -23,10 +22,10 @@
 
 
         <!--<ImageView-->
-            <!--android:id="@+id/fanhui"-->
-            <!--android:layout_width="60dp"-->
-            <!--android:layout_height="40dp"-->
-            <!--android:src="@drawable/fanhui" />-->
+        <!--android:id="@+id/fanhui"-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:src="@drawable/fanhui" />-->
 
         <TextView
             android:text="我的关注"
@@ -52,4 +51,5 @@
 
 
     </android.support.v7.widget.RecyclerView>
+
 </LinearLayout>

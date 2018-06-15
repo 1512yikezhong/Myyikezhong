@@ -1,5 +1,7 @@
 package com.bawei.myyikezhong.Tuijian.ui.module;
 
+import com.bawei.myyikezhong.Tuijian.ui.net.DainzanApiServoce;
+import com.bawei.myyikezhong.Tuijian.ui.net.DianzanApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.DuanziApi;
 import com.bawei.myyikezhong.Tuijian.ui.net.DuanziApiService;
 import com.bawei.myyikezhong.Tuijian.ui.net.FujinApi;
@@ -200,5 +202,20 @@ public class HttpModule {
 
         return  SuijiApi.getSuijiApi(suijiApiService);
     }
+
+
+    @Provides
+    DianzanApi provideDianzanApi (OkHttpClient.Builder builder){
+        Retrofit retrofit=new Retrofit.Builder()
+                .baseUrl("https://www.zhaoapi.cn/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(builder.build())
+                .build();
+
+        DainzanApiServoce dainzanApiServoce = retrofit.create(DainzanApiServoce.class);
+        return DianzanApi.getDianzanApi(dainzanApiServoce);
+    }
+
 
 }

@@ -85,7 +85,6 @@ public class DuanziFragment extends BaseFragment<DuanziPresenter>implements  Dua
 
                 //startActivity(new Intent(getContext(), UserActivity.class));
 
-
                 Intent intent=new Intent(getContext(), UserActivity.class);
                 intent.putExtra("uid",list.get(position).getUid());
               //  intent.putExtra("token",list.get(position))

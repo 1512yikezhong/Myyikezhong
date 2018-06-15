@@ -7,7 +7,7 @@ import com.bawei.myyikezhong.Shipin.remen.RemenFragment;
 import com.bawei.myyikezhong.Tuijian.ui.GuanZhuFragment;
 import com.bawei.myyikezhong.Tuijian.ui.module.HttpModule;
 import com.bawei.myyikezhong.Xiangqing.XiangQingActivity;
-import com.bawei.myyikezhong.myguanzhu.MyGuanzhuActivity;
+import com.bawei.myyikezhong.myguanzhu.GuanZhuActivity;
 import com.bawei.myyikezhong.myshoucang.MyShoucangActivity;
 import com.bawei.myyikezhong.sousuo.SousuoActivity;
 import com.bawei.myyikezhong.userjm.UserActivity;
@@ -30,7 +30,7 @@ public interface HttpComponent {
     void  inject(UserActivity userActivity);
 
 
-    void inject(MyGuanzhuActivity myGuanzhuActivity);
+    void inject(GuanZhuActivity guanZhuActivity);
 
     void inject(MyShoucangActivity myShoucangActivity);
 

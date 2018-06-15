@@ -43,7 +43,10 @@ public class SousuoPresenter extends BasePresenter<SousuoContract.View> implemen
                 }).subscribe(new Consumer<List<SousuoBean.DataBean>>() {
             @Override
             public void accept(List<SousuoBean.DataBean> dataBeans) throws Exception {
-                mView.sousuo(dataBeans);
+                if (mView!=null){
+                    mView.sousuo(dataBeans);
+                }
+
             }
         });
 
@@ -64,7 +67,10 @@ public class SousuoPresenter extends BasePresenter<SousuoContract.View> implemen
                 }).subscribe(new Consumer<List<SuijiBean.DataBean>>() {
             @Override
             public void accept(List<SuijiBean.DataBean> dataBeans) throws Exception {
-                mView.suiji(dataBeans);
+                if (mView!=null){
+                    mView.suiji(dataBeans);
+                }
+
             }
         });
 
